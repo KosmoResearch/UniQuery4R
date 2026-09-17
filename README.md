@@ -114,6 +114,30 @@ outputs/demo/
 
 Useful flags: `--points-from warp3d` (export the `warp3d` head points instead of unprojected depth), `--max-frames`, `--max-size`, `--chunk-size`, `--conf-thresh`.
 
+`--chunk-size` (default 30000) trades GPU memory for speed in the dense query decoder. Peak per-process GPU memory measured at 504 px on a single NVIDIA A800-80GB (PyTorch 2.5.1), with the bundled 20-frame sample and a 100-frame clip (DAVIS `parkour`):
+
+| `--chunk-size` | 20 frames | 100 frames |
+| --- | --- | --- |
+| 5000 | 14.2 GB | 32.2 GB |
+| 10000 | 16.4 GB | 45.5 GB |
+| 20000 | 21.2 GB | 70.2 GB |
+| 30000 (default) | 25.7 GB | OOM |
+| 40000 | 30.1 GB | OOM |
+| 50000 | 34.6 GB | OOM |
+
+Memory grows roughly linearly with both `--chunk-size` and the number of frames: a 100-frame clip does not fit in 80 GB at the default 30000. If inference runs out of GPU memory (OOM), lower `--chunk-size` (e.g. `--chunk-size 10000`) to reduce peak memory usage; raise it for higher throughput.
+
+Configure it directly on the inference command line:
+
+```bash
+python scripts/infer_4d.py \
+    --checkpoint Kosmo-Research/UniQuery4R \
+    --output outputs/demo \
+    --chunk-size 10000
+```
+
+`scripts/infer_motion_mask.py` takes the same flag; in the Python API, pass `chunk_size` to the `UniQuery4R(...)` constructor.
+
 ### 2. Motion masks
 
 Compute per-frame moving-object masks from the predicted scene-flow magnitude, with overlay PNGs and a GIF:
