@@ -1,0 +1,45 @@
+UniQuery4R
+Copyright 2026 Kosmo Research and the UniQuery4R authors.
+
+This product includes software developed by third parties:
+
+--------------------------------------------------------------------------------
+VGGT (Visual Geometry Grounded Transformer)
+  Source: https://github.com/facebookresearch/vggt
+  Copyright (c) Meta Platforms, Inc. and affiliates. All rights reserved.
+  License: VGGT License (see licenses/VGGT-LICENSE.txt), which is a
+  non-commercial research license derived from the CC BY-NC 4.0 license.
+
+  The following modules are adapted from VGGT:
+    - uniquery4r/models/heads/camera_head.py
+    - uniquery4r/models/heads/head_act.py
+    - uniquery4r/models/heads/mlp_head.py
+    - uniquery4r/models/layers/*
+    - uniquery4r/utils/pose_enc.py
+    - uniquery4r/utils/rotation.py
+
+  NOTE: As required by the VGGT license, these files are distributed under the
+  VGGT License terms and must not be used for commercial purposes. All other
+  original UniQuery4R code is released under the Apache License 2.0 (see
+  LICENSE). Redistributions of this project (or derivative works) must retain
+  this NOTICE, the licenses/VGGT-LICENSE.txt file, and the copyright headers
+  in the adapted source files.
+
+--------------------------------------------------------------------------------
+Depth Anything 3 (DA3)
+  Source: https://github.com/ByteDance-Seed/Depth-Anything-3
+  The ViT backbone configuration reference used by the 4D encoder follows the
+  DA3 ViT-g model (embed_dim=1536, out_layers=[19, 27, 33, 39], alt_start=13).
+
+--------------------------------------------------------------------------------
+DINOv2
+  Source: https://github.com/facebookresearch/dinov2
+  Copyright (c) Meta Platforms, Inc. and affiliates. All rights reserved.
+  License: Apache License 2.0.
+  The ViT encoder implementation in uniquery4r/models/encoder.py is adapted
+  from DINOv2 / the DA3 ViT backbone.
+
+--------------------------------------------------------------------------------
+Third-party Python packages used at runtime (torch, torchvision, numpy, einops,
+trimesh, matplotlib, scipy, opencv-python, pillow, viser,
+huggingface_hub) remain under their respective licenses.

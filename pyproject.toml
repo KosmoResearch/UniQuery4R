@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uniquery4r"
+version = "0.1.0"
+description = "UniQuery4R: Unified 4D Scene Reconstruction from a Single Query"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Tiancheng Chen" },
+    { name = "Sheng Tang" },
+    { name = "Wenhua Jin" },
+    { name = "Weiqi Zhang" },
+    { name = "Juntong Fang" },
+    { name = "Junsheng Zhou" },
+    { name = "Zesong Li" },
+]
+keywords = [
+    "4d reconstruction",
+    "dynamic scene",
+    "scene flow",
+    "point tracking",
+    "feed-forward",
+]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.4",
+    "torchvision>=0.19",
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "einops>=0.7",
+    "trimesh>=4.0",
+    "matplotlib>=3.7",
+    "scipy>=1.10",
+    "opencv-python>=4.8",
+]
+
+[project.optional-dependencies]
+# Interactive viser-based scene-flow viewer (scripts/view_4d.py)
+viz = ["viser>=1.0"]
+# Checkpoint download from Hugging Face Hub (--checkpoint org/name)
+hub = ["huggingface_hub>=0.24"]
+all = ["viser>=1.0", "huggingface_hub>=0.24"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2608.17283"
+Project = "https://kosmoresearch.github.io/UniQuery4R/"
+
+[tool.setuptools.packages.find]
+include = ["uniquery4r*"]
+exclude = ["assets*", "scripts*", "licenses*"]

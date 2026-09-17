@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you find this repository useful, please cite our paper."
+title: "UniQuery4R: Unified 4D Scene Reconstruction from a Single Query"
+authors:
+  - family-names: Chen
+    given-names: Tiancheng
+  - family-names: Tang
+    given-names: Sheng
+  - family-names: Jin
+    given-names: Wenhua
+  - family-names: Zhang
+    given-names: Weiqi
+  - family-names: Fang
+    given-names: Juntong
+  - family-names: Zhou
+    given-names: Junsheng
+  - family-names: Li
+    given-names: Zesong
+preferred-citation:
+  type: article
+  title: "UniQuery4R: Unified 4D Scene Reconstruction from a Single Query"
+  authors:
+    - family-names: Chen
+      given-names: Tiancheng
+    - family-names: Tang
+      given-names: Sheng
+    - family-names: Jin
+      given-names: Wenhua
+    - family-names: Zhang
+      given-names: Weiqi
+    - family-names: Fang
+      given-names: Juntong
+    - family-names: Zhou
+      given-names: Junsheng
+    - family-names: Li
+      given-names: Zesong
+  journal: "arXiv preprint arXiv:2608.17283"
+  year: 2026
+url: "https://arxiv.org/abs/2608.17283"
+license: Apache-2.0

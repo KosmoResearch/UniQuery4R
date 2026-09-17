@@ -1,0 +1,10 @@
+# Core (4D inference / export / evaluation)
+torch>=2.4
+torchvision>=0.19
+numpy>=1.24
+pillow>=10.0
+einops>=0.7
+trimesh>=4.0
+matplotlib>=3.7
+scipy>=1.10
+opencv-python>=4.8
