@@ -56,6 +56,7 @@ Because the encoded clip is reused across arbitrary source–target selections, 
 
 ## News
 
+- **[2026-11]** A stronger successor is out: see **[GFM 4D](https://github.com/KosmoResearch/Kosmo-GFM#gfm-4d)** in [Kosmo-GFM](https://github.com/KosmoResearch/Kosmo-GFM), a production-ready 4D geometry foundation model with better 4D reconstruction performance ([comparison](#comparison-with-gfm-4d)).
 - **[2026-09]** Code and model inference scripts released.
 
 ## Installation
@@ -224,6 +225,17 @@ Per-dataset breakdown of UniQuery4R:
 | --- | --- | --- | --- | --- |
 | APD ↑ | 84.64 | 83.74 | 80.00 | 87.17 |
 | EPE ↓ (m) | 0.1333 | 0.1604 | 0.2078 | 0.1387 |
+
+### Comparison with GFM 4D
+
+[GFM 4D](https://github.com/KosmoResearch/Kosmo-GFM#gfm-4d) is the successor to UniQuery4R in the [Kosmo-GFM](https://github.com/KosmoResearch/Kosmo-GFM) repository. On the four shared WorldTrack subsets (dynamic point tracking):
+
+| Method | PStudio | PointOdyssey | Dynamic Replica | Aria Digital Twin | Mean (4 subsets) |
+| --- | --- | --- | --- | --- | --- |
+| UniQuery4R APD ↑ | 84.64 | 83.74 | 80.00 | 87.17 | 83.89 |
+| GFM 4D APD ↑ | 83.41 | 85.73 | 80.76 | 89.78 | **84.92** |
+| UniQuery4R EPE ↓ (m) | 0.1333 | 0.1604 | 0.2078 | 0.1387 | 0.1601 |
+| GFM 4D EPE ↓ (m) | 0.1411 | 0.1474 | 0.2017 | 0.1102 | **0.1501** |
 
 ## Acknowledgements
 
